@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <title>Главная</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            {% for item in menu %}
+            <li><a href="{{item['url']}}">{{item['name']}}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <main>
+        <div class="block">
+            <div class="block-st">
+                <div class="style-block-1">
+                    <form action="index" method="POST">
+                        <h2>Авторизация</h2>
+                        <div class="input-box">
+                            <ion-icon name="people-outline"></ion-icon>
+                            <input value="" type="text" name="link" class="link" id="link"
+                                required>
+                            <label for="link" class="form-label">Ссылка</label>
+                        </div>
+                        <div class="input-box1">
+                            <select name="type" id="typeId" class="sel">
+                                <option value="privat">privat</option>
+                                <!--                                для всех-->
+                                <option value="public">public</option>
+<!--                                для авторизованоого-->
+                                <option value="general">general</option>
+                            </select>
+                        </div>
+                        <p class="linkGot">
+
+                        </p>
+                        <button class="submit_accept" name="btn" value="auto">Сократить</button>
+                    </form>
+                </div>
+                <div class="style-block-2">
+                    <h2>Ваши ссылки:</h2>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>
